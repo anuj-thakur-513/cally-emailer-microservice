@@ -8,9 +8,8 @@ const RESEND_API_KEY = process.env.RESEND_API_KEY;
 exports.handler = async (event) => {
   try {
     const resendClient = new Resend(RESEND_API_KEY);
-
-    const data = JSON.parse(event.body);
-    const { receiverEmail, senderEmail, senderName } = data;
+    console.log(event, typeof event);
+    const { receiverEmail, senderEmail, senderName } = event;
     const filePath = path.join(__dirname, "templates/newEvent.ejs");
     const html = await ejs.renderFile(filePath, {
       name: senderName,
