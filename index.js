@@ -17,7 +17,7 @@ exports.handler = async (event) => {
     });
 
     const res = await resendClient.emails.send({
-      from: "Cally <noreply@password-manager.anuj-thakur.com>",
+      from: "Cally <noreply@updates.anujthakur.dev>",
       to: receiverEmail,
       subject: "New Event Request",
       html: html,
